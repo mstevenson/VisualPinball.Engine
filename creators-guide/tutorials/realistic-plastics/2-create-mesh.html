@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Realistic Looking Plastics - Create Mesh | VPE Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Realistic Looking Plastics - Create Mesh | VPE Documentation ">
+    <meta name="description" content="How to create the meshes in Blender">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.visualpinball.org/">
+    <meta property="og:title" content="Realistic Looking Plastics - Create Mesh | VPE Documentation ">
+    <meta property="og:description" content="How to create the meshes in Blender">
+    <meta property="og:image" content="https://docs.visualpinball.org/images/social-poster.jpg">
+  
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.visualpinball.org/">
+    <meta property="twitter:title" content="Realistic Looking Plastics - Create Mesh | VPE Documentation ">
+    <meta property="twitter:description" content="How to create the meshes in Blender">
+    <meta property="twitter:image" content="https://docs.visualpinball.org/images/social-poster.jpg">
+  
+  
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+  
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.6/release/featherlight.min.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push(["setCookieDomain", "*.docs.visualpinball.org"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//count.vpdb.io/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '2']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+    </script>
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="43.38" height="37.61" xml:space="preserve"><style>.st0{fill:#ddd}</style><path class="st0" d="M43.21 0H.17C.02 0-.04.11.03.24l21.52 37.28c.08.13.2.13.28 0L43.35.24c.08-.13.01-.24-.14-.24zm-3.62 2.41l-8.43 14.6a.54.54 0 01-.41.24h-4.83a.52.52 0 00-.41.24l-.98 1.7c-.08.13-.01.24.14.24h4.83c.15 0 .21.11.14.24l-1.79 3.1a.6.6 0 01-.42.23H22.6a.52.52 0 00-.41.24l-.98 1.7c-.08.13-.01.24.14.24h4.83c.15 0 .21.11.14.24l-4.48 7.76c-.08.13-.2.13-.28 0L3.8 2.41c-.08-.13-.02-.24.13-.24h35.51c.16 0 .22.11.15.24z"></path><path class="st0" d="M33.26 5.75H10.13c-.15 0-.21.11-.14.24l8.24 14.28c.08.13.2.13.28 0l3.67-6.36a.54.54 0 01.41-.24h6.09c.15 0 .34-.11.41-.24l4.3-7.44c.08-.13.02-.24-.13-.24zm-3.63 2.41l-1.79 3.1a.54.54 0 01-.41.24h-6.09a.52.52 0 00-.41.24l-2.42 4.18c-.08.13-.2.13-.28 0l-4.48-7.76c-.08-.13-.01-.24.14-.24h15.6c.15 0 .21.11.14.24z"></path></svg>
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <a title="VPE is open source!" class="navbar-github pull-right" href="https://github.com/freezy/VisualPinball.Engine" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 33.5 33.1" width="33.5" height="33.1"><path d="M16.7.4a16.3 16.3 0 00-5.2 31.8c.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.6-1.9-1.7-2.4-1.7-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.7-3.2 1.7-4.4-.1-.4-.7-2 .2-4.3 0 0 1.4-.4 4.5 1.7a18.4 18.4 0 018.2 0c3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3v4.5c0 .4.3.9 1.1.8A16.3 16.3 0 0016.7.4z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="tutorial_plastics_2">
+<h1 id="create-mesh">Create Mesh</h1>
+
+<p>We're now going to import the SVG created in the <a class="xref" href="1-prepare-artwork.html">previous step</a> and create a mesh that is beveled on the top.</p>
+<h2 id="step-1-import">Step 1: Import</h2>
+<p>Open Blender, clear the scene with <code>A</code>, <code>X</code>, <code>Enter</code>. Then, click on <em>File -&gt; Import -&gt; Scalable Vector Graphics (.svg)</em>, navigate to where you've saved the SVG in the previous step, select <code>Plastics.svg</code>, and hit <em>Import</em>.</p>
+<p>You might not see much due to the imported size. If there were no errors, you should see your imported plastics in the Outliner. Select them and press <code>.</code> on the numpad (not the main keyboard) while hovering over the 3D viewport to zoom in.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You might run into another issue due to the size of the plastics: Camera clipping. To fix that, press <code>N</code> with your cursor over the 3D Viewport, select <em>View</em> and set something like 0.001m for <em>Clip Start</em>.</p>
+</div>
+<p>Your viewport should look like this now:</p>
+<p><img src="blender-shapes.png" alt="2D Outlines"></p>
+<h2 id="step-2-setup">Step 2: Setup</h2>
+<p>The way we're going for this is to extrude and bevel our SVG on one side only. This however results in the bottom faces missing. To fix that, we'll duplicate our SVG and use one for extrusion and the other for the bottom mesh.</p>
+<p>Before we start, let's make it one single object so we can easily apply everything we do in one step. Select one element, hit <code>A</code> for select all, then <code>Ctrl</code>+<code>J</code> for joining all curves.</p>
+<p>Hit <code>Shift</code>+<code>D</code>, <code>Esc</code> to duplicate at the same position. In the <em>Outliner</em>, let's name our objects &quot;bottom&quot; and &quot;extruded&quot;:</p>
+<p><img src="blender-duplicated-surface.png" alt="Duplicated Surface"></p>
+<h2 id="step-3-extrude">Step 3: Extrude</h2>
+<p>Select &quot;extruded&quot; in the outliner and click on the <em>Object Properties</em> tab in the <em>Properties</em> view on the right side. Under <em>Geometry</em>, there is an <em>Extrude</em> field, and a bit below a <em>Bevel</em> section.</p>
+<p>Now, the <em>Extrude</em> value is difficult to judge. If you have access to the physical plastics, you can calculate the scale between the real world and the object in Blender by physically measuring the size of a plastic and dividing it by the <a href="https://docs.blender.org/manual/en/latest/editors/3dview/toolbar/measure.html">measured value</a> in Blender. Then, also measure the thickness of the real-world plastic and multiply it by that factor. Personally, I just eyeballed it and ended up with 0.003 m for the <em>Extrude</em> value and 0.001 m for the <em>Bevel Depth</em>.</p>
+<p>Then there are three more properties to change:</p>
+<ul>
+<li>We only want to extrude the front, so set <em>Fill Mode</em> to <em>Front</em>.</li>
+<li>We don't want to make the object larger by beveling, so enter the negative value of the bevel depth under <em>Offset</em>.</li>
+<li>Finally, a <em>Resolution</em> of <code>0</code> will do.</li>
+</ul>
+<p>Here are all the non-default options in red:</p>
+<p><img src="blender-extrude.png" alt="Extrude Parameters"></p>
+<h2 id="step-4-convert-join-and-clean">Step 4: Convert, Join and Clean</h2>
+<p>As seen in the previous screenshot, our bottom object now sits in the middle of the extruded mesh. Let's fix that by typing <code>G</code> (move), <code>Z</code> (on z-axis only), and the extrude value of the previous step, in our case <code>0.003</code>, followed by <code>Enter</code>.</p>
+<p>Then type <code>A</code> to select all objects, choose <em>Object -&gt; Convert -&gt; Mesh</em>, and hit <code>Ctrl</code>+<code>J</code> to join them all. Finally, clean up the duplicated vertices from the extrusion by hitting <code>Tab</code> for edit mode, <code>A</code> to select all vertices, and choose <em>Mesh -&gt; Clean Up -&gt; Merge by Distance</em>.</p>
+<p>Exit edit mode and this is how it should look:</p>
+<p><img src="blender-extruded.png" alt="Extruded Shapes"></p>
+<p>If that's the case, congrats, you're done with the meshes! Maybe now it's a good moment to save your Blender file. <code>Ctrl</code>+<code>S</code> and enter <code>Plastics.blend</code>.</p>
+<p>In the <a class="xref" href="3-uv-map-mesh.html">next part</a> of this tutorial, we're going to UV-Map them.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/Documentation~/creators-guide/tutorials/realistic-plastics/2-create-mesh.md/#L1" class="contribution-link btn btn-default">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2022 VPE Team</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.6/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="../../../styles/plugin-featherlight.js"></script>
+  </body>
+</html>

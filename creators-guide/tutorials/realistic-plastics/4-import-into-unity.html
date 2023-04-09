@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Realistic Looking Plastics - Import Into Unity | VPE Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Realistic Looking Plastics - Import Into Unity | VPE Documentation ">
+    <meta name="description" content="How setup your exported mesh in Unity">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.visualpinball.org/">
+    <meta property="og:title" content="Realistic Looking Plastics - Import Into Unity | VPE Documentation ">
+    <meta property="og:description" content="How setup your exported mesh in Unity">
+    <meta property="og:image" content="https://docs.visualpinball.org/images/social-poster.jpg">
+  
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.visualpinball.org/">
+    <meta property="twitter:title" content="Realistic Looking Plastics - Import Into Unity | VPE Documentation ">
+    <meta property="twitter:description" content="How setup your exported mesh in Unity">
+    <meta property="twitter:image" content="https://docs.visualpinball.org/images/social-poster.jpg">
+  
+  
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+  
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.6/release/featherlight.min.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push(["setCookieDomain", "*.docs.visualpinball.org"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//count.vpdb.io/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '2']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+    </script>
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="43.38" height="37.61" xml:space="preserve"><style>.st0{fill:#ddd}</style><path class="st0" d="M43.21 0H.17C.02 0-.04.11.03.24l21.52 37.28c.08.13.2.13.28 0L43.35.24c.08-.13.01-.24-.14-.24zm-3.62 2.41l-8.43 14.6a.54.54 0 01-.41.24h-4.83a.52.52 0 00-.41.24l-.98 1.7c-.08.13-.01.24.14.24h4.83c.15 0 .21.11.14.24l-1.79 3.1a.6.6 0 01-.42.23H22.6a.52.52 0 00-.41.24l-.98 1.7c-.08.13-.01.24.14.24h4.83c.15 0 .21.11.14.24l-4.48 7.76c-.08.13-.2.13-.28 0L3.8 2.41c-.08-.13-.02-.24.13-.24h35.51c.16 0 .22.11.15.24z"></path><path class="st0" d="M33.26 5.75H10.13c-.15 0-.21.11-.14.24l8.24 14.28c.08.13.2.13.28 0l3.67-6.36a.54.54 0 01.41-.24h6.09c.15 0 .34-.11.41-.24l4.3-7.44c.08-.13.02-.24-.13-.24zm-3.63 2.41l-1.79 3.1a.54.54 0 01-.41.24h-6.09a.52.52 0 00-.41.24l-2.42 4.18c-.08.13-.2.13-.28 0l-4.48-7.76c-.08-.13-.01-.24.14-.24h15.6c.15 0 .21.11.14.24z"></path></svg>
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <a title="VPE is open source!" class="navbar-github pull-right" href="https://github.com/freezy/VisualPinball.Engine" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 33.5 33.1" width="33.5" height="33.1"><path d="M16.7.4a16.3 16.3 0 00-5.2 31.8c.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.6-1.9-1.7-2.4-1.7-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.7-3.2 1.7-4.4-.1-.4-.7-2 .2-4.3 0 0 1.4-.4 4.5 1.7a18.4 18.4 0 018.2 0c3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3v4.5c0 .4.3.9 1.1.8A16.3 16.3 0 0016.7.4z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="tutorial_plastics_4">
+<h1 id="import-into-unity">Import Into Unity</h1>
+
+<h2 id="step-1-import-the-fbx">Step 1: Import the FBX</h2>
+<p>Open your scene in Unity and use the <em>Project</em> window to navigate to where you've exported your FBX.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We recommend storing models at <code>Assets/&lt;Table Name&gt;/Models</code>, and texture at <code>Assets/&lt;Table Name&gt;/Textures</code>. If you haven't already, copy <code>Plastics-01.png</code> as <code>Plastics.png</code> and <code>Plastics.fbx</code> into the corresponding folders.</p>
+</div>
+<p>Drag <code>Plastics.fbx</code> under the <code>Playfield</code> GameObject. Scale and rotate them until they have the approximate size.</p>
+<p><img src="unity-imported.png" alt="Imported"></p>
+<p>We recommend unpacking the prefab. Unpacking will still reference the meshes of your FBX, but not the position <em>within</em> the FBX. That way you're more flexible in positioning the plastics, and should you move them in Blender later you won't need to re-position them in Unity. In order to do that, right-click on the <code>Plastics</code> GameObject and select <em>Prefab -&gt; Unpack</em>.</p>
+<h2 id="step-2-setup-assets">Step 2: Setup Assets</h2>
+<p>First, let's configure how the texture is imported. In the <em>Project</em> window, navigate to <code>Assets/&lt;Table Name&gt;/Textures</code> where you saved <code>Plastics.png</code>, and select it. In the <em>Inspector</em> window, check the option <em>Alpha Is Transparent</em>. Depending on how large you've exported it, you might need to update <em>Max Size</em> as well, in our case we'll use 4096 × 4096. When you're done, hit <em>Apply</em> at the bottom.</p>
+<img src="unity-decal-material-preview.png" width="350" class="img-responsive pull-right" style="margin-left: 15px">
+<p>Next, we'll create a material of our bottom surface. In the <em>Project</em> window, navigate to <code>Packages/Visual Pinball Engine (HDRP)/Assets/Art/Materials/Default/Plastic</code>, select <code>Plastics Decal</code>, hit <code>Ctrl</code>+<code>C</code>. Navigate to your project's <code>Assets/&lt;Table Name&gt;/Materials</code> folder, and press <code>Ctrl</code>+<code>V</code>.</p>
+<p>Select the copied <code>Plastics Decal</code>. In the inspector, under <em>Surface Inputs</em>, click on the little circle next to <em>Base Map</em>, and type &quot;Plastics&quot; in the search box. Select the imported texture you've created and close the picker dialog.</p>
+<h2 id="step-3-assign-the-materials">Step 3: Assign the Materials</h2>
+<p>Now we have our materials ready, let's assign them to our plastics.</p>
+<p>Select all plastics GameObjects. In the inspector, under <em>Mesh Renderer -&gt; Materials</em>, you should see three empty elements. These are our material slots. Drag the <code>Plastics Decal</code> material you've just updated into the last slot (Element 2).</p>
+<p>Then, in the <em>Project</em> window, navigate to where you were before, to <code>Packages/Visual Pinball Engine (HDRP)/Assets/Art/Materials/Default/Plastic</code>. Drag <code>Plastics Edges</code> to <em>Element 0</em> and <code>Plastic Top</code> to <em>Element 1</em>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For some reason, material slots might be different depending on the object, so you'll need to verify if all the plastics look correct, and shuffle the material slots if necessary (you can just re-order them under <em>Materials</em>).</p>
+</div>
+<p>If all went well, it should look like that!</p>
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/Difnx_uBGgo?showinfo=0&loop=1&autopause=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<h3 id="transparent-plastics">Transparent Plastics</h3>
+<p>If you had completely transparent plastics without any artwork, you'll notice that they are still textured:</p>
+<p><img src="unity-transparent-textured.png" alt="Textured transparent"></p>
+<p>In order to fix that, replace the <code>Plastics Decal</code> material with the <code>Plastics Top</code> material, and it will look correct:</p>
+<p><img src="unity-transparent.png" alt="Fully transparent"></p>
+<h2 id="step-4-alignment">Step 4: Alignment</h2>
+<p>Use the <em>Scene View</em> to move each plastic to the right position. You'll also need to rotate them and probably resize them as well.</p>
+<p>Tip: Once you're happy with all positions, set height of the plastic of all objects to the same value by selecting them in the Hierarchy and putting a Z-value of <em>Scale</em> in the <em>Transform</em> panel of the Inspector.</p>
+<h2 id="thats-it">That's It!</h2>
+<p>If you came across an error or have a better way of achieving this, don't hesitate to click on the <em>Improve this Doc</em> button on the top right side (<a href="https://github.com/freezy/VisualPinball.Engine/wiki/Documentation">documentation</a>).</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/Documentation~/creators-guide/tutorials/realistic-plastics/4-import-into-unity.md/#L1" class="contribution-link btn btn-default">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2022 VPE Team</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.6/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="../../../styles/plugin-featherlight.js"></script>
+  </body>
+</html>

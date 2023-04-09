@@ -1,0 +1,1608 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TablePatcher
+   | VPE Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TablePatcher
+   | VPE Documentation ">
+    <meta name="description" content="">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.visualpinball.org/">
+    <meta property="og:title" content="Class TablePatcher
+   | VPE Documentation ">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://docs.visualpinball.org/images/social-poster.jpg">
+  
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://docs.visualpinball.org/">
+    <meta property="twitter:title" content="Class TablePatcher
+   | VPE Documentation ">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="https://docs.visualpinball.org/images/social-poster.jpg">
+  
+  
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.6/release/featherlight.min.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push(["setCookieDomain", "*.docs.visualpinball.org"]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//count.vpdb.io/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '2']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+    </script>
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="43.38" height="37.61" xml:space="preserve"><style>.st0{fill:#ddd}</style><path class="st0" d="M43.21 0H.17C.02 0-.04.11.03.24l21.52 37.28c.08.13.2.13.28 0L43.35.24c.08-.13.01-.24-.14-.24zm-3.62 2.41l-8.43 14.6a.54.54 0 01-.41.24h-4.83a.52.52 0 00-.41.24l-.98 1.7c-.08.13-.01.24.14.24h4.83c.15 0 .21.11.14.24l-1.79 3.1a.6.6 0 01-.42.23H22.6a.52.52 0 00-.41.24l-.98 1.7c-.08.13-.01.24.14.24h4.83c.15 0 .21.11.14.24l-4.48 7.76c-.08.13-.2.13-.28 0L3.8 2.41c-.08-.13-.02-.24.13-.24h35.51c.16 0 .22.11.15.24z"></path><path class="st0" d="M33.26 5.75H10.13c-.15 0-.21.11-.14.24l8.24 14.28c.08.13.2.13.28 0l3.67-6.36a.54.54 0 01.41-.24h6.09c.15 0 .34-.11.41-.24l4.3-7.44c.08-.13.02-.24-.13-.24zm-3.63 2.41l-1.79 3.1a.54.54 0 01-.41.24h-6.09a.52.52 0 00-.41.24l-2.42 4.18c-.08.13-.2.13-.28 0l-4.48-7.76c-.08-.13-.01-.24.14-.24h15.6c.15 0 .21.11.14.24z"></path></svg>
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <a title="VPE is open source!" class="navbar-github pull-right" href="https://github.com/freezy/VisualPinball.Engine" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 33.5 33.1" width="33.5" height="33.1"><path d="M16.7.4a16.3 16.3 0 00-5.2 31.8c.8.1 1.1-.4 1.1-.8v-2.8c-4.5 1-5.5-2.2-5.5-2.2-.6-1.9-1.7-2.4-1.7-2.4-1.5-1 .1-1 .1-1 1.6.1 2.5 1.7 2.5 1.7 1.5 2.5 3.8 1.8 4.7 1.4.1-1.1.6-1.8 1-2.2-3.6-.4-7.4-1.8-7.4-8.1 0-1.8.7-3.2 1.7-4.4-.1-.4-.7-2 .2-4.3 0 0 1.4-.4 4.5 1.7a18.4 18.4 0 018.2 0c3.1-2.1 4.5-1.7 4.5-1.7.9 2.2.3 3.9.2 4.3 1 1.1 1.7 2.6 1.7 4.4 0 6.3-3.8 7.6-7.4 8 .6.5 1.1 1.5 1.1 3v4.5c0 .4.3.9 1.1.8A16.3 16.3 0 0016.7.4z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="VisualPinball.Unity.Patcher.TablePatcher">
+  
+  
+  <h1 id="VisualPinball_Unity_Patcher_TablePatcher" data-uid="VisualPinball.Unity.Patcher.TablePatcher" class="text-break">Class TablePatcher
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TablePatcher</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="VisualPinball.Unity.Patcher.html">VisualPinball.Unity.Patcher</a></h6>
+  <h6><strong>Assembly</strong>: VisualPinball.Unity.Patcher.dll</h6>
+  <h5 id="VisualPinball_Unity_Patcher_TablePatcher_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class TablePatcher : object</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_MaterialProvider.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.MaterialProvider%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L37">View Source</a>
+  </span>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_MaterialProvider" data-uid="VisualPinball.Unity.Patcher.TablePatcher.MaterialProvider">MaterialProvider</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMaterialProvider MaterialProvider</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.IMaterialProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_TableContainer.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.TableContainer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L35">View Source</a>
+  </span>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_TableContainer" data-uid="VisualPinball.Unity.Patcher.TablePatcher.TableContainer">TableContainer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TableContainer TableContainer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Engine.VPT.Table.TableContainer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_TextureProvider.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.TextureProvider%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L36">View Source</a>
+  </span>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_TextureProvider" data-uid="VisualPinball.Unity.Patcher.TablePatcher.TextureProvider">TextureProvider</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ITextureProvider TextureProvider</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.ITextureProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_AddLightGroup_UnityEngine_GameObject_UnityEngine_GameObject_System_String___.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.AddLightGroup(UnityEngine.GameObject%2CUnityEngine.GameObject%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L208">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_AddLightGroup_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.AddLightGroup*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_AddLightGroup_UnityEngine_GameObject_UnityEngine_GameObject_System_String___" data-uid="VisualPinball.Unity.Patcher.TablePatcher.AddLightGroup(UnityEngine.GameObject,UnityEngine.GameObject,System.String[])">AddLightGroup(GameObject, GameObject, String[])</h4>
+  <div class="markdown level1 summary"><p>Adds a light group component to an existing game object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static LightGroupComponent AddLightGroup(GameObject tableGo, GameObject go, params string[] names)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">tableGo</span></td>
+        <td><p>Table game object for retrieving light references.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object to which the light group is added to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">names</span></td>
+        <td><p>A list of light names that are part of the light group.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.LightGroupComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_ConvertToInsertLight_VisualPinball_Unity_LightComponent_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.ConvertToInsertLight(VisualPinball.Unity.LightComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L399">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_ConvertToInsertLight_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.ConvertToInsertLight*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_ConvertToInsertLight_VisualPinball_Unity_LightComponent_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.ConvertToInsertLight(VisualPinball.Unity.LightComponent)">ConvertToInsertLight(LightComponent)</h4>
+  <div class="markdown level1 summary"><p>Converts a normal light to an insert light, by deleting and re-creating the insert prefab.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected GameObject ConvertToInsertLight(LightComponent lo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.LightComponent</span></td>
+        <td><span class="parametername">lo</span></td>
+        <td><p>Light component to convert</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><p>New converted game object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_CreateDropTargetBank_UnityEngine_GameObject_UnityEngine_GameObject_System_String_System_String___.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.CreateDropTargetBank(UnityEngine.GameObject%2CUnityEngine.GameObject%2CSystem.String%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L175">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_CreateDropTargetBank_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.CreateDropTargetBank*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_CreateDropTargetBank_UnityEngine_GameObject_UnityEngine_GameObject_System_String_System_String___" data-uid="VisualPinball.Unity.Patcher.TablePatcher.CreateDropTargetBank(UnityEngine.GameObject,UnityEngine.GameObject,System.String,System.String[])">CreateDropTargetBank(GameObject, GameObject, String, String[])</h4>
+  <div class="markdown level1 summary"><p>Creates a drop target bank component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static DropTargetBankComponent CreateDropTargetBank(GameObject tableGo, GameObject go, string name = &quot;DropTargetBank&quot;, params string[] dropTargetNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">tableGo</span></td>
+        <td><p>Table game object, for retrieving references</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name of the new drop target bank</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">dropTargetNames</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.DropTargetBankComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_CreateEmptyGameObject_UnityEngine_GameObject_System_String_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.CreateEmptyGameObject(UnityEngine.GameObject%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L77">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_CreateEmptyGameObject_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.CreateEmptyGameObject*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_CreateEmptyGameObject_UnityEngine_GameObject_System_String_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.CreateEmptyGameObject(UnityEngine.GameObject,System.String)">CreateEmptyGameObject(GameObject, String)</h4>
+  <div class="markdown level1 summary"><p>Creates an empty game object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static GameObject CreateEmptyGameObject(GameObject parentGo, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">parentGo</span></td>
+        <td><p>Parent of the new game object</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name of the new game object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_CreateLight_System_String_System_Single_System_Single_UnityEngine_GameObject_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.CreateLight(System.String%2CSystem.Single%2CSystem.Single%2CUnityEngine.GameObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L374">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_CreateLight_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.CreateLight*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_CreateLight_System_String_System_Single_System_Single_UnityEngine_GameObject_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.CreateLight(System.String,System.Single,System.Single,UnityEngine.GameObject)">CreateLight(String, Single, Single, GameObject)</h4>
+  <div class="markdown level1 summary"><p>Creates a point light.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static LightComponent CreateLight(string name, float x, float y, GameObject parentGo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name of the new light</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>X-position on the playfield</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>Y-position on the playfield</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">parentGo</span></td>
+        <td><p>Game object to parent to (usually &quot;Lights&quot;)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.LightComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_CreateTrough_UnityEngine_GameObject_UnityEngine_GameObject_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.CreateTrough(UnityEngine.GameObject%2CUnityEngine.GameObject%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L124">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_CreateTrough_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.CreateTrough*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_CreateTrough_UnityEngine_GameObject_UnityEngine_GameObject_System_String_System_String_System_String_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.CreateTrough(UnityEngine.GameObject,UnityEngine.GameObject,System.String,System.String,System.String)">CreateTrough(GameObject, GameObject, String, String, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a trough.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static TroughComponent CreateTrough(GameObject tableGo, GameObject parentGo, string name = &quot;Trough&quot;, string exitKicker = &quot;BallRelease&quot;, string entrySwitch = &quot;Drain&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">tableGo</span></td>
+        <td><p>Table game object, for retrieving references</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">parentGo</span></td>
+        <td><p>Parent game object of the new trough</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name of the new trough</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">exitKicker</span></td>
+        <td><p>Name of the exit kicker</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entrySwitch</span></td>
+        <td><p>Name of the entry switch</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.TroughComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_DuplicateLight_UnityEngine_GameObject_System_Single_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.DuplicateLight(UnityEngine.GameObject%2CSystem.Single%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L435">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_DuplicateLight_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.DuplicateLight*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_DuplicateLight_UnityEngine_GameObject_System_Single_System_Single_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.DuplicateLight(UnityEngine.GameObject,System.Single,System.Single,System.Single)">DuplicateLight(GameObject, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Duplicates a light source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void DuplicateLight(GameObject go, float x, float y, float z)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the light source</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>X-position of the new light source, relative to the lamp</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>Y-position of the new light source, relative to the lamp</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">z</span></td>
+        <td><p>Z-position of the new light source, relative to the lamp</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_FindSiblingComponent__1_UnityEngine_MonoBehaviour_System_String_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.FindSiblingComponent%60%601(UnityEngine.MonoBehaviour%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L162">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_FindSiblingComponent_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.FindSiblingComponent*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_FindSiblingComponent__1_UnityEngine_MonoBehaviour_System_String_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.FindSiblingComponent``1(UnityEngine.MonoBehaviour,System.String)">FindSiblingComponent&lt;T&gt;(MonoBehaviour, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected T FindSiblingComponent&lt;T&gt;(MonoBehaviour mb, string name)
+    where T : MonoBehaviour</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.MonoBehaviour</span></td>
+        <td><span class="parametername">mb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_GetOrCreateGameObject_UnityEngine_GameObject_System_String_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.GetOrCreateGameObject(UnityEngine.GameObject%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L84">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_GetOrCreateGameObject_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.GetOrCreateGameObject*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_GetOrCreateGameObject_UnityEngine_GameObject_System_String_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.GetOrCreateGameObject(UnityEngine.GameObject,System.String)">GetOrCreateGameObject(GameObject, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static GameObject GetOrCreateGameObject(GameObject parentGo, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">parentGo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LightColor_UnityEngine_GameObject_UnityEngine_Color_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LightColor(UnityEngine.GameObject%2CUnityEngine.Color)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L232">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LightColor_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightColor*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LightColor_UnityEngine_GameObject_UnityEngine_Color_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightColor(UnityEngine.GameObject,UnityEngine.Color)">LightColor(GameObject, Color)</h4>
+  <div class="markdown level1 summary"><p>Sets the light color of a light source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LightColor(GameObject go, Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the light source</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.Color</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>New color of the light source</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VisualPinball_Unity_Patcher_TablePatcher_LightColor_UnityEngine_GameObject_UnityEngine_Color__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Supports multiple light sources.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LightIntensity_UnityEngine_GameObject_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LightIntensity(UnityEngine.GameObject%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L312">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LightIntensity_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightIntensity*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LightIntensity_UnityEngine_GameObject_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightIntensity(UnityEngine.GameObject,System.Single)">LightIntensity(GameObject, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the intensity of a light source in lumen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LightIntensity(GameObject go, float intensityLumen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the light source</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">intensityLumen</span></td>
+        <td><p>Intensity of the light in lumen</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VisualPinball_Unity_Patcher_TablePatcher_LightIntensity_UnityEngine_GameObject_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Supports multiple light sources.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LightPos_UnityEngine_GameObject_System_Single_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LightPos(UnityEngine.GameObject%2CSystem.Single%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L358">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LightPos_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightPos*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LightPos_UnityEngine_GameObject_System_Single_System_Single_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightPos(UnityEngine.GameObject,System.Single,System.Single,System.Single)">LightPos(GameObject, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the light position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LightPos(GameObject go, float x, float y, float z)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the light source</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>X-position of the source relative to the light</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>Y-position of the source relative to the light</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">z</span></td>
+        <td><p>Z-position of the source relative to the light</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VisualPinball_Unity_Patcher_TablePatcher_LightPos_UnityEngine_GameObject_System_Single_System_Single_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Supports multiple light sources. Note that this only applies to the light source, not to the light itself.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LightRange_UnityEngine_GameObject_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LightRange(UnityEngine.GameObject%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L325">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LightRange_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightRange*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LightRange_UnityEngine_GameObject_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightRange(UnityEngine.GameObject,System.Single)">LightRange(GameObject, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the range of the light.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LightRange(GameObject go, float range)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the light</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">range</span></td>
+        <td><p>Range in meters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LightShadow_UnityEngine_GameObject_System_Boolean_System_Boolean_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LightShadow(UnityEngine.GameObject%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L340">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LightShadow_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightShadow*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LightShadow_UnityEngine_GameObject_System_Boolean_System_Boolean_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightShadow(UnityEngine.GameObject,System.Boolean,System.Boolean,System.Single)">LightShadow(GameObject, Boolean, Boolean, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the shadow of the light.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LightShadow(GameObject go, bool enabled, bool isDynamic, float nearPlane = 0.01F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the light</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">enabled</span></td>
+        <td><p>Whether to enable or disable shadows.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isDynamic</span></td>
+        <td><p>If true, update on each frame.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">nearPlane</span></td>
+        <td><p>Distance from when on shadows are cast.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LightTemperature_UnityEngine_GameObject_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LightTemperature(UnityEngine.GameObject%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L245">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LightTemperature_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightTemperature*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LightTemperature_UnityEngine_GameObject_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LightTemperature(UnityEngine.GameObject,System.Single)">LightTemperature(GameObject, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the temperature of the light.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LightTemperature(GameObject go, float temp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the light</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">temp</span></td>
+        <td><p>Temperature in Kelvin</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LinkCoil_VisualPinball_Unity_TableComponent_System_String_System_String_VisualPinball_Unity_ICoilDeviceComponent_System_String_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LinkCoil(VisualPinball.Unity.TableComponent%2CSystem.String%2CSystem.String%2CVisualPinball.Unity.ICoilDeviceComponent%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L488">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LinkCoil_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkCoil*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LinkCoil_VisualPinball_Unity_TableComponent_System_String_System_String_VisualPinball_Unity_ICoilDeviceComponent_System_String_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkCoil(VisualPinball.Unity.TableComponent,System.String,System.String,VisualPinball.Unity.ICoilDeviceComponent,System.String)">LinkCoil(TableComponent, String, String, ICoilDeviceComponent, String)</h4>
+  <div class="markdown level1 summary"><p>Links a coil device to an existing coil mapping if it matches a given name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LinkCoil(TableComponent tableComponent, string elementName, string coilId, ICoilDeviceComponent coilDevice, string deviceItem = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.TableComponent</span></td>
+        <td><span class="parametername">tableComponent</span></td>
+        <td><p>Table component for retrieving mappings.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">elementName</span></td>
+        <td><p>The name that the coil device's GameObject has to match in order to be linked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">coilId</span></td>
+        <td><p>The ID of the coil mapping that the coil device will be linked to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.ICoilDeviceComponent</span></td>
+        <td><span class="parametername">coilDevice</span></td>
+        <td><p>The coil device to be linked</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">deviceItem</span></td>
+        <td><p>If set, it's the device item, otherwise the first item of the device.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LinkCoil_VisualPinball_Unity_TableComponent_System_String_VisualPinball_Unity_ICoilDeviceComponent_System_String_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LinkCoil(VisualPinball.Unity.TableComponent%2CSystem.String%2CVisualPinball.Unity.ICoilDeviceComponent%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L470">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LinkCoil_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkCoil*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LinkCoil_VisualPinball_Unity_TableComponent_System_String_VisualPinball_Unity_ICoilDeviceComponent_System_String_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkCoil(VisualPinball.Unity.TableComponent,System.String,VisualPinball.Unity.ICoilDeviceComponent,System.String)">LinkCoil(TableComponent, String, ICoilDeviceComponent, String)</h4>
+  <div class="markdown level1 summary"><p>Links a coil device to an existing coil mapping.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LinkCoil(TableComponent tableComponent, string coilId, ICoilDeviceComponent coilDevice, string deviceItem = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.TableComponent</span></td>
+        <td><span class="parametername">tableComponent</span></td>
+        <td><p>Table component for retrieving mappings.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">coilId</span></td>
+        <td><p>The ID of the coil mapping that the coil device will be linked to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.ICoilDeviceComponent</span></td>
+        <td><span class="parametername">coilDevice</span></td>
+        <td><p>The coil device to be linked</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">deviceItem</span></td>
+        <td><p>If set, it's the device item, otherwise the first item of the device.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LinkLights_UnityEngine_GameObject_System_String___.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LinkLights(UnityEngine.GameObject%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L449">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LinkLights_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkLights*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LinkLights_UnityEngine_GameObject_System_String___" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkLights(UnityEngine.GameObject,System.String[])">LinkLights(GameObject, String[])</h4>
+  <div class="markdown level1 summary"><p>Creates a light group with the given light names</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LinkLights(GameObject go, params string[] lightNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>GameObject to add the light group to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">lightNames</span></td>
+        <td><p>Names of the light GameObjects. They must be sister objects of the first parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LinkSwitch_VisualPinball_Unity_TableComponent_System_String_System_String_VisualPinball_Unity_ISwitchDeviceComponent_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LinkSwitch(VisualPinball.Unity.TableComponent%2CSystem.String%2CSystem.String%2CVisualPinball.Unity.ISwitchDeviceComponent)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L520">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LinkSwitch_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkSwitch*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LinkSwitch_VisualPinball_Unity_TableComponent_System_String_System_String_VisualPinball_Unity_ISwitchDeviceComponent_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkSwitch(VisualPinball.Unity.TableComponent,System.String,System.String,VisualPinball.Unity.ISwitchDeviceComponent)">LinkSwitch(TableComponent, String, String, ISwitchDeviceComponent)</h4>
+  <div class="markdown level1 summary"><p>Links a switch device to an existing switch mapping if it matches a given name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LinkSwitch(TableComponent tableComponent, string elementName, string switchId, ISwitchDeviceComponent switchDevice)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.TableComponent</span></td>
+        <td><span class="parametername">tableComponent</span></td>
+        <td><p>Table component for retrieving mappings.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">elementName</span></td>
+        <td><p>The name that the switch device's GameObject has to match in order to be linked.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">switchId</span></td>
+        <td><p>The ID of the switch mapping that the switch device will be linked to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.ISwitchDeviceComponent</span></td>
+        <td><span class="parametername">switchDevice</span></td>
+        <td><p>The switch device to be linked</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_LinkSwitch_VisualPinball_Unity_TableComponent_System_String_VisualPinball_Unity_ISwitchDeviceComponent_System_String_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.LinkSwitch(VisualPinball.Unity.TableComponent%2CSystem.String%2CVisualPinball.Unity.ISwitchDeviceComponent%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L503">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_LinkSwitch_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkSwitch*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_LinkSwitch_VisualPinball_Unity_TableComponent_System_String_VisualPinball_Unity_ISwitchDeviceComponent_System_String_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.LinkSwitch(VisualPinball.Unity.TableComponent,System.String,VisualPinball.Unity.ISwitchDeviceComponent,System.String)">LinkSwitch(TableComponent, String, ISwitchDeviceComponent, String)</h4>
+  <div class="markdown level1 summary"><p>Links a switch device to an existing switch mapping.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void LinkSwitch(TableComponent tableComponent, string switchId, ISwitchDeviceComponent switchDevice, string switchDeviceItem = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.TableComponent</span></td>
+        <td><span class="parametername">tableComponent</span></td>
+        <td><p>Table component for retrieving mappings.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">switchId</span></td>
+        <td><p>The ID of the switch mapping that the switch device will be linked to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">VisualPinball.Unity.ISwitchDeviceComponent</span></td>
+        <td><span class="parametername">switchDevice</span></td>
+        <td><p>The switch device to be linked</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">switchDeviceItem</span></td>
+        <td><p>Switch ID inside of the device item. If null, the first switch will be used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_Playfield_UnityEngine_GameObject_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.Playfield(UnityEngine.GameObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L59">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_Playfield_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.Playfield*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_Playfield_UnityEngine_GameObject_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.Playfield(UnityEngine.GameObject)">Playfield(GameObject)</h4>
+  <div class="markdown level1 summary"><p>Returns the playfield of a given table game object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static GameObject Playfield(GameObject tableGo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">tableGo</span></td>
+        <td><p>Table game object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_PointRange_UnityEngine_GameObject_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.PointRange(UnityEngine.GameObject%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L279">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_PointRange_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.PointRange*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_PointRange_UnityEngine_GameObject_System_Single_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.PointRange(UnityEngine.GameObject,System.Single,System.Single)">PointRange(GameObject, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the angle of a spot light.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void PointRange(GameObject go, float outer, float inner)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the spot light</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">outer</span></td>
+        <td><p>Outer angle of the spot</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">inner</span></td>
+        <td><p>Inner angle of the spot, in percent of the outer angle</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VisualPinball_Unity_Patcher_TablePatcher_PointRange_UnityEngine_GameObject_System_Single_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Supports multiple light sources.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_PostPatch_UnityEngine_GameObject_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.PostPatch(UnityEngine.GameObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L47">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_PostPatch_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.PostPatch*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_PostPatch_UnityEngine_GameObject_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.PostPatch(UnityEngine.GameObject)">PostPatch(GameObject)</h4>
+  <div class="markdown level1 summary"><p>This method is executed once after all element-specific patches had
+been applied.<p>
+<p>Override this method when you need to create new objects or make global
+changes to the project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void PostPatch(GameObject tableGo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">tableGo</span></td>
+        <td><p>GameObject of the table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_PyramidAngle_UnityEngine_GameObject_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.PyramidAngle(UnityEngine.GameObject%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L296">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_PyramidAngle_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.PyramidAngle*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_PyramidAngle_UnityEngine_GameObject_System_Single_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.PyramidAngle(UnityEngine.GameObject,System.Single,System.Single)">PyramidAngle(GameObject, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets a light source to pyramid spotlight and sets its parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void PyramidAngle(GameObject go, float angle, float ar)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the light source</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>Angle of the pyramid</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">ar</span></td>
+        <td><p>Aspect ratio of the pyramid</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VisualPinball_Unity_Patcher_TablePatcher_PyramidAngle_UnityEngine_GameObject_System_Single_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Supports multiple light sources.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_Reparent_UnityEngine_GameObject_UnityEngine_GameObject_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.Reparent(UnityEngine.GameObject%2CUnityEngine.GameObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L100">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_Reparent_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.Reparent*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_Reparent_UnityEngine_GameObject_UnityEngine_GameObject_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.Reparent(UnityEngine.GameObject,UnityEngine.GameObject)">Reparent(GameObject, GameObject)</h4>
+  <div class="markdown level1 summary"><p>Set a new parent for the given child while keeping the position and rotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void Reparent(GameObject child, GameObject parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">child</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher_SpotAngle_UnityEngine_GameObject_System_Single_System_Single_.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher.SpotAngle(UnityEngine.GameObject%2CSystem.Single%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L261">View Source</a>
+  </span>
+  <a id="VisualPinball_Unity_Patcher_TablePatcher_SpotAngle_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.SpotAngle*"></a>
+  <h4 id="VisualPinball_Unity_Patcher_TablePatcher_SpotAngle_UnityEngine_GameObject_System_Single_System_Single_" data-uid="VisualPinball.Unity.Patcher.TablePatcher.SpotAngle(UnityEngine.GameObject,System.Single,System.Single)">SpotAngle(GameObject, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Sets the angle of a spot light.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void SpotAngle(GameObject go, float outer, float inner)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEngine.GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>Game object of the spot light</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">outer</span></td>
+        <td><p>Outer angle of the spot</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">inner</span></td>
+        <td><p>Inner angle of the spot, in percent of the outer angle</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="VisualPinball_Unity_Patcher_TablePatcher_SpotAngle_UnityEngine_GameObject_System_Single_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Supports multiple light sources.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/freezy/VisualPinball.Engine/new/master/apiSpec/new?filename=VisualPinball_Unity_Patcher_TablePatcher.md&amp;value=---%0Auid%3A%20VisualPinball.Unity.Patcher.TablePatcher%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link btn btn-default">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/freezy/VisualPinball.Engine/blob/master/VisualPinball.Unity/VisualPinball.Unity.Patcher/Matcher/TablePatcher.cs/#L32" class="contribution-link btn btn-default" style="margin-top: 15px">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © 2022 VPE Team</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.6/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="../styles/plugin-featherlight.js"></script>
+  </body>
+</html>
